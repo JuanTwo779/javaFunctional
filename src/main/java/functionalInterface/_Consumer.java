@@ -16,12 +16,19 @@ public class _Consumer {
         addTwoToStock.accept(new Stock("Peach", 11), new Stock("Orange", 12));
         Stock eggplant = new Stock("Eggplant", 12);
         addSecretStock.accept(eggplant, false);
+
+        iDPrivate(new Stock("water", 1), false);
     }
 
 
     //Normal
     private static void addToStock(Stock stock){
         System.out.println(stock.itemName + " added to stock. Item ID: " + stock.itemId);
+    }
+
+    private static void iDPrivate(Stock stock, boolean yeahNa){
+        System.out.println("The item ID of " + stock.itemName + " is " +
+                (yeahNa ? stock.itemId : "***********"));
     }
 
     //Functional
@@ -36,6 +43,8 @@ public class _Consumer {
     private static BiConsumer<Stock, Boolean> addSecretStock = (stock, showPhone) ->
             System.out.println(stock.itemName + " added to stock. Item ID: " +
                     (showPhone ? stock.itemId : "*********"));
+
+
 
 
 
