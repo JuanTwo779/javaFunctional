@@ -1,5 +1,6 @@
 package functionalInterface;
 
+import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 
 public class _Consumer {
@@ -10,6 +11,11 @@ public class _Consumer {
 
         //consumer
         addToStockConsumer.accept(new Stock("Apple", 10));
+
+        //BiConsumer
+        addTwoToStock.accept(new Stock("Peach", 11), new Stock("Orange", 12));
+        Stock eggplant = new Stock("Eggplant", 12);
+        addSecretStock.accept(eggplant, false);
     }
 
 
@@ -23,6 +29,13 @@ public class _Consumer {
     private static Consumer<Stock> addToStockConsumer =
             stock -> System.out.println(stock.itemName + " added to stock. Item ID: " + stock.itemId);
 
+    private static BiConsumer<Stock, Stock> addTwoToStock = (stock1, stock2) ->
+            System.out.println(stock1.itemName + " added to stock. Item ID: " + stock1.itemId + "\n" +
+                    stock2.itemName + " added to stock. Item ID: " + stock2.itemId);
+
+    private static BiConsumer<Stock, Boolean> addSecretStock = (stock, showPhone) ->
+            System.out.println(stock.itemName + " added to stock. Item ID: " +
+                    (showPhone ? stock.itemId : "*********"));
 
 
 
