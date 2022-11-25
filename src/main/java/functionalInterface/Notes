@@ -1,0 +1,17 @@
+Consumer<T>
+    Takes in argument/s and returns nothing
+
+Function<T,R>
+    Takes in argument/s and returns specified object type
+    - Math operations
+    - can be chained together to make more complex operations
+
+Predicate<T>
+    Takes in argument/s and returns boolean
+    - Validation
+
+Supplier<T>
+    Returns specified object type and takes in nothing
+
+
+
