@@ -1,0 +1,16 @@
+A stream takes input from DSs and provide results as per 'pipelined' methods.
+
+Various intermediate operations can be pipelined.
+Terminal operations end the stream and return the result.
+
+Intermediate OPs:
+1. map() - returns a stream consisting of the results of applying a given 'function' to elements of the stream
+2. filter() - select elements as per the 'predicate'
+3. sorted() - used to sort the stream
+
+Terminal OPs:
+1. collect() - return the result of intermediate operations
+        .collect(Collectors.toList());
+        .collect(Collectors.toSet());
+2. forEach() - iterates through every element of stream
+3. reduce() - reduce elements of a stream to a single value (Binary parameter)
