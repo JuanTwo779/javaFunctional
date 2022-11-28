@@ -1,0 +1,7 @@
+Container object that can contain a null or non-null value.
+
+isPresent() will return true
+get() will return the value
+
+orElse() returns a default value if value not present
+ifPresent() executes the block of code if value present
