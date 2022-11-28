@@ -30,6 +30,17 @@ public class _Streams {
                 .map(person -> person.name)
                 .mapToInt(name -> name.length())
                 .forEach(name -> System.out.println(name));
+
+        boolean onlyFemales = people.stream()
+                .allMatch(person -> FEMALE.equals(person.gender));
+
+        boolean anyFemales = people.stream()
+                .anyMatch(person -> FEMALE.equals(person.gender));
+
+        boolean noFemales = people.stream()
+                .noneMatch(person -> FEMALE.equals(person.gender));
+
+        System.out.println(onlyFemales + " " + anyFemales + " " + noFemales);
     }
 
     static class Person {
